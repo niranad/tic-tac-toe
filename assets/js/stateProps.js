@@ -13,6 +13,7 @@ const stateProps = [
   'oCells',
   'isActive',
   'isOver',
+  'isWon',
 ]
 
 export default stateProps

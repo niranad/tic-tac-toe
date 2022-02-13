@@ -35,6 +35,9 @@ export default {
   setIsActive(context, payload) {
     context.commit('setIsActive', payload)
   },
+  setIsWon(context, payload) {
+    context.commit('setIsWon', payload)
+  },
   setXCells(context, payload) {
     context.commit('setXCells', payload)
   },

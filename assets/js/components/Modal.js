@@ -17,8 +17,9 @@ export default class Modal extends Component {
 
     let { state: game } = store
 
-    // if there are no more empty cells to occupy, game is a tie
-    if (game.xCells.length + game.oCells.length === 9) {
+    // if game is not won and there are no more empty cells to occupy, 
+    // game is a tie
+    if (!game.isWon && game.xCells.length + game.oCells.length === 9) {
       winnerMark.textContent = ''
       winText.textContent = 'DRAW!'
       takesRoundTxt.textContent = "IT'S A TIE"
@@ -45,7 +46,7 @@ export default class Modal extends Component {
       takesRoundTxt.style.color = 'rgb(255, 170, 4)'
 
       // else X won
-    } else {
+    } else if (game.nextTurn === 'O') {
       winnerMark.textContent = 'X'
       winnerMark.style.color = 'rgb(11, 214, 221)'
 

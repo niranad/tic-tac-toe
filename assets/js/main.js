@@ -11,7 +11,7 @@ let sessionData = {}
 
 stateProps.map((prop) => (sessionData[prop] = sessionStorage.getItem(prop)))
 
-let { player1, player2, player1Wins, nextTurn, xCells, isActive } = sessionData
+let { player1, player2, player1Wins, nextTurn, xCells, isActive, isWon } = sessionData
 
 window.addEventListener('DOMContentLoaded', () => {
   if (player1 && player2) {
@@ -80,9 +80,11 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  // if isActive sessionStorage is populated, (definitely isOver 
+  // is also populated), persist the data with sessionStorage
   if (isActive !== null) {
     stateProps
-      .slice(12)
+      .slice(12, 14)
       .map((prop) =>
         store.dispatch(
           `set${prop.charAt(0).toUpperCase() + prop.substring(1)}`,
@@ -90,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ),
       )
   } else {
-    stateProps.slice(12).map((prop) => {
+    stateProps.slice(12, 14).map((prop) => {
       store.dispatch(
         `set${prop.charAt(0).toUpperCase() + prop.substring(1)}`,
         false,
@@ -98,6 +100,10 @@ window.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem(prop, false)
     })
   }
+
+  // never persist isWon from sessionStorage
+  store.dispatch('setIsWon', false)
+  sessionStorage.setItem('isWon', '')
 
   checkbox.addEventListener('change', () => {
     store.dispatch('setPlayer1', game.player1 === 'O' ? 'X' : 'O')

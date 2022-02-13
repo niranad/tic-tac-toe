@@ -44,7 +44,7 @@ body {
 
 #versus {
   font-size: 30px;
-  text-shadow: 2px 4px 7px rgb(92, 89, 89);
+  text-shadow: 2px 4px 7px rgb(134, 126, 126);
 }
 
 #info {
@@ -269,7 +269,7 @@ span:nth-child(3),
   align-items: center;
   width: 100%;
   height: 25%;
-  background-color: rgba(33, 50, 60, 0.925);
+  background-color: rgba(33, 50, 60, 0.877);
   z-index: 2;
 }
 
@@ -298,7 +298,7 @@ span:nth-child(3),
 
 #win-mark {
   position: absolute;
-  margin-top: 4px;
+  margin-top: 3px;
   margin-left: 154px;
   font-size: 34px;
   font-weight: 700;
@@ -378,7 +378,7 @@ span:nth-child(3),
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 414px) {
   #gameboard {
     grid-template-columns: repeat(3, 72px);
     grid-template-rows: repeat(5, 67px);
@@ -388,6 +388,10 @@ span:nth-child(3),
 
   #versus {
     font-size: 21px;
+  }
+
+  #info {
+    font-size: 14px;
   }
 
   .board-top {
@@ -435,7 +439,7 @@ span:nth-child(3),
 
   .takes {
     font-size: 19px;
-    margin-top: 6px;
+    margin-top: 5.5px;
     margin-left: 96px;
   }
 
@@ -458,6 +462,10 @@ span:nth-child(3),
 
   #versus {
     font-size: 17px;
+  }
+
+  #info {
+    font-size: 12px;
   }
 
   .board-top {
@@ -494,13 +502,13 @@ span:nth-child(3),
   }
 
   #win-mark {
-    font-size: 27px;
+    font-size: 25px;
     margin-left: 18px;
   }
 
   .takes {
     font-size: 16px;
-    margin-left: 46px;
+    margin-left: 47px;
   }
 
   #round-info {

@@ -23,7 +23,7 @@ export default class Store {
       set: function (state, key, value) {
         state[key] = value
         self.events.publish('stateChange', self.state)
-
+        
         return true
       },
     })
@@ -37,9 +37,7 @@ export default class Store {
     }
 
     self.status = 'action'
-
     self.actions[actionKey](self, payload)
-
     self.status = 'resting'
 
     return true
@@ -57,7 +55,6 @@ export default class Store {
     let newState = self.mutations[mutationKey](self.state, payload)
 
     self.state = Object.assign(self.state, newState)
-
     self.status = 'resting'
   }
 }

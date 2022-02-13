@@ -9,12 +9,12 @@ let { state: game } = store
 window.addEventListener('DOMContentLoaded', () => {
   let sessionData = {}
 
-  // retrieve number state data from sessionStorage
+  // retrieve state data of type number from sessionStorage
   stateProps.slice(3, 9).map((prop) => {
     sessionData[prop] = Number(sessionStorage.getItem(prop))
   })
 
-  // retrieve string state data from sessionStorage
+  // retrieve state data of type string from sessionStorage
   stateProps.slice(9).map((prop) => {
     sessionData[prop] = sessionStorage.getItem(prop)
   })
@@ -191,8 +191,13 @@ window.addEventListener('DOMContentLoaded', () => {
       store.dispatch('setIsActive', true)
       sessionStorage.setItem('isActive', 'true')
 
-      store.dispatch('setIsOver', false)
-      sessionStorage.setItem('isOver', '')
+      stateProps.slice(13).map((prop) => {
+        store.dispatch(
+          `set${prop.charAt(0).toUpperCase() + prop.substring(1)}`,
+          false,
+        )
+        sessionStorage.setItem(prop, '')
+      })
     } else {
       store.dispatch('setIsActive', false)
       sessionStorage.setItem('isActive', '')
@@ -215,8 +220,9 @@ window.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem(prop, 0)
     })
 
-    // reinitialize isOver
+    // reinitialize isOver and isWon in sessionStorage
     sessionStorage.setItem('isOver', '')
+    sessionStorage.setItem('isWon', '')
 
     document.querySelector('#modal').style.display = 'none'
     document.querySelector('#overlay').style.display = 'none'

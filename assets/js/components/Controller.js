@@ -31,14 +31,7 @@ export default class Controller extends Component {
       let currMark = document.querySelector(`#cell${store.state.currentCell}`)
         .textContent
 
-      // if there are no more empty cells, game over
-      if (store.state.xCells.length + store.state.oCells.length === 9) {
-        store.dispatch('setIsOver', true)
-        sessionStorage.setItem('isOver', 'true')
-        return
-      }
-
-      const checkGameOver = (cellNumber) => {
+      const checkCellsMatched = (cellNumber) => {
         matchedCells.push(cellNumber)
         cellsCheck.push(
           document.querySelector(`#cell${cellNumber}`).textContent === currMark,
@@ -46,6 +39,9 @@ export default class Controller extends Component {
         if (cellsCheck[cellsCheck.length - 1]) ++trueCount
         if (cellsCheck.length === 3) {
           if (trueCount === 3) {
+            store.dispatch('setIsWon', true);
+            sessionStorage.setItem('isWon', 'true')
+
             store.dispatch('setIsOver', true)
             sessionStorage.setItem('isOver', 'true')
 
@@ -63,14 +59,18 @@ export default class Controller extends Component {
                 cell.firstChild.style.color = 'rgba(0, 0, 5, 0.918)'
               })
             }
+          } else if (game.xCells.length + game.oCells.length === 9) {
+            store.dispatch('setIsOver', true)
+            sessionStorage.setItem('isOver', 'true')
           }
+
           cellsCheck = []
           trueCount = 0
           matchedCells = []
         }
       }
 
-      analyzePreviousMoves(lastPlayerCells, checkGameOver)
+      analyzePreviousMoves(lastPlayerCells, checkCellsMatched)
     }
 
     const analyzePreviousMoves = (
@@ -440,7 +440,7 @@ export default class Controller extends Component {
 
     // Refresh button
     refreshBtn.addEventListener('click', () => {
-      if (!game.player2IsHuman) {
+      if (!game.player2IsHuman && !game.isActive) {
         // display "#thinking"
         document.querySelector('#thinking').style.display = 'block'
 

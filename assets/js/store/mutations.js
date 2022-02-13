@@ -74,6 +74,11 @@ export default {
 
     return state
   },
+  setIsWon(state, payload) {
+    state = { ...state, isWon: payload }
+
+    return state
+  },
   setXCells(state, payload) {
     if (state.xCells === undefined) {
       state = { ...state, xCells: [] }

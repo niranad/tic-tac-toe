@@ -13,4 +13,5 @@ export default {
   oCells: [],
   isActive: false,
   isOver: false,
+  isWon: false,
 }
