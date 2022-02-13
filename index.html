@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Adeniran J. Olukanni" />
+    <meta name="keywords" content="Tic-tac-toe" />
+    <meta name="description" content="A Tic-tac-toe JavaScript game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link
+      rel="icon"
+      href="./assets/icons/icons8-tic-tac-toe-47.png"
+      type="image/png"
+    />
+    <title>TIC-TAC-TOE</title>
+  </head>
+  <body>
+    <main id="main">
+      <div>
+        <span id="x-mark" class="mark">X</span>
+        <span id="o-mark" class="mark">O</span>
+      </div>
+      <div id="choose-mark">
+        <h3>PICK PLAYER 1'S MARK</h3>
+        <div id="marks">
+          <input type="checkbox" id="checkbox" />
+          <label id="checkbox-label" for="checkbox">
+            <span id="x" class="mark choice">X</span>
+            <span id="o" class="mark choice">O</span>
+            <div id="select"></div>
+          </label>
+        </div>
+        <h5>REMEMBER : X GOES FIRST</h5>
+      </div>
+      <a id="vs-cpu" href="./game.html" class="btn">NEW GAME (VS CPU)</a>
+      <a id="vs-human" href="./game.html" class="btn">NEW GAME (VS HUMAN)</a>
+    </main>
+
+    <script type="module" src="./assets/js/main.js" defer></script>
+  </body>
+</html>

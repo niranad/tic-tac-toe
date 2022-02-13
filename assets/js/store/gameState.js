@@ -1,0 +1,16 @@
+export default {
+  player1: 'X',
+  player2: 'O',
+  player2IsHuman: false,
+  player1Wins: 0,
+  player2Wins: 0,
+  CPUWins: 0,
+  ties: 0,
+  movesCount: 0,
+  nextTurn: 'X',
+  currentCell: 0,
+  xCells: [],
+  oCells: [],
+  isActive: false,
+  isOver: false,
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Adeniran J. Olukanni" />
+    <meta name="keywords" content="Tic-tac-toe, JavaScript Game" />
+    <meta name="description" content="Tic-tac-toe JavaScript game" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="./assets/icons/icons8-tic-tac-toe-47.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="./assets/css/game.css" />
+    <title>TIC-TAC-TOE</title>
+  </head>
+  <body>
+    <main id="main">
+      <div id="gameboard-container">
+        <div id="players-info">
+          <h1 id="versus">
+            <span id="player1"></span> VS <span id="player2"></span>
+          </h1>
+          <h4 id="info"></h4>
+          <h5 id="thinking">CPU thinking...</thinking></h5>
+        </div>
+
+        <div id="gameboard">
+          <button type="button" class="board-top" id="marks">
+            <span id="x" class="mark">X</span><span id="o" class="mark">O</span>
+          </button>
+          <button type="button" class="board-top" id="next-turn">
+            <span id="turn-mark">X</span><span id="turn">TURN</span>
+          </button>
+          <button type="button" class="board-top" id="refresh-btn">
+            <i class="fa fa-refresh"></i>
+          </button>
+
+          <div id="board"></div>
+
+          <button type="button" id="playerX-state" class="state">
+            <span>X(</span><span id="playerX"></span>)<span
+              id="playerX-wins"
+            >0</span></button
+          ><button type="button" id="ties-state" class="state">
+            <span>TIES</span><span id="ties">0</span></button
+          ><button type="button" id="playerO-state" class="state">
+            <span>O(</span><span id="playerO"></span>)<span
+              id="playerO-wins"
+            >0</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div id="overlay"></div>
+    <div id="modal">
+      <div id="modal-content">
+        <span id="win-text"></span>
+        <div id="win-state">
+          <span id="win-mark"></span><span id="" class="takes"> TAKES THE ROUND</span>
+        </div>
+        <a id="quit-btn" class="modal-btn" href="">QUIT</a>
+        <a id="next-round-btn" class="modal-btn" href="">NEXT ROUND</a>
+      </div>
+    </div>
+
+    <script type="module" src="./assets/js/game.js" defer></script>
+  </body>
+</html>
