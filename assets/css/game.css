@@ -433,7 +433,7 @@ span:nth-child(3),
 
   #win-mark {
     font-size: 30px;
-    margin-top: -2px;
+    margin-top: 1px;
     margin-left: 68px;
   }
 
@@ -504,7 +504,6 @@ span:nth-child(3),
   #win-mark {
     font-size: 25px;
     margin-left: 18px;
-    margin-top: 4px;
   }
 
   .takes {
