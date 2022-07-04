@@ -15,7 +15,7 @@ a {
 }
 
 :root {
-  --tiles-color: rgba(2, 13, 36, 0.301);
+  --tiles-color: rgba(5, 19, 49, 0.301);
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 5, 0.918);
+  background-color: rgba(0, 0, 5, 0.753);
 }
 
 #main {
@@ -179,6 +179,19 @@ button {
 .cell span {
   font-size: 40px;
   font-weight: 800;
+}
+
+.cell:active {
+  animation: button-press 1s linear;
+}
+
+@keyframes button-press {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 #cell1 {
