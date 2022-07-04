@@ -4,9 +4,9 @@ This project is a challenge from [frontendmentor](https://frontendmentor.io). Th
 
 ## Technologies
 
-HTML
-CSS
-JAVASCRIPT
+- HTML
+- CSS
+- JavaScript
 
 ## Live site
 
